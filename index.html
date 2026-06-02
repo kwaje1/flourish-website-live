@@ -166,8 +166,8 @@
 </style>
 </head>
 <body>
-<form name="waitlist" netlify netlify-honeypot="bot-field" hidden><input type="email" name="email"><input name="bot-field"></form>
-<form name="newsletter" netlify netlify-honeypot="bot-field" hidden><input type="email" name="email"><input name="bot-field"></form>
+<form name="waitlist" data-netlify="true" netlify-honeypot="bot-field" hidden><input type="hidden" name="form-name" value="waitlist"><input type="email" name="email"><input name="bot-field"></form>
+<form name="newsletter" data-netlify="true" netlify-honeypot="bot-field" hidden><input type="hidden" name="form-name" value="newsletter"><input type="email" name="email"><input name="bot-field"></form>
 
 <div class="cursor-ring"></div>
 <div class="cursor-dot"></div>
@@ -391,9 +391,11 @@ document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
 
 function thanks(e,form){
   e.preventDefault();
-  const data=new FormData(form);
-  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
-    .then(()=>{form.innerHTML='<div style="font-size:20px;font-weight:700">You’re in. Watch your inbox.</div>';})
+  const params=new URLSearchParams();
+  params.append('form-name',form.getAttribute('name'));
+  new FormData(form).forEach((v,k)=>{if(k!=='form-name')params.append(k,v);});
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params.toString()})
+    .then(r=>{form.innerHTML='<div style="font-size:20px;font-weight:700">You’re in. Watch your inbox.</div>';})
     .catch(()=>{form.innerHTML='<div style="font-size:20px;font-weight:700">You’re in. Watch your inbox.</div>';});
 }
 </script>
