@@ -31,9 +31,6 @@
   nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;color:#fff;transition:background .35s,padding .35s,box-shadow .35s;}
   nav.scrolled{background:rgba(14,12,10,.92);backdrop-filter:blur(10px);padding:12px 6vw;box-shadow:0 1px 0 rgba(255,255,255,.08);}
   nav .logo{font-weight:700;font-size:19px;letter-spacing:-.5px;}
-  .logo-brand{font-weight:800;letter-spacing:-.5px;}
-  .grad-logo{background:linear-gradient(90deg,var(--paper),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-  footer .logo-brand{color:var(--paper);}
   nav .links{display:flex;gap:30px;font-size:14px;font-weight:500;align-items:center;}
   nav .links a{position:relative;}
   nav .links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .3s;}
@@ -207,7 +204,8 @@
 <div class="cursor-dot"></div>
 
 <nav id="nav">
-    <div class="logo logo-brand">Kay<span class="grad-logo">Wajé</span></div>
+  <div class="logo">KRISH&nbsp;WAJE</div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="links" id="navlinks">
     <a href="#services">Work with me</a>
     <a href="#resources">Resources</a>
@@ -406,7 +404,7 @@
 </section>
 
 <footer>
-    <div class="logo" style="font-weight:700;font-size:18px">KRISH WAJE</div>
+  <div class="logo" style="font-weight:700;font-size:18px">KRISH WAJE</div>
   <div class="socials">
     <a href="https://www.instagram.com/kay_waje" class="magnetic">Instagram</a>
     <a href="https://tiktok.com/@kay_waje" class="magnetic">TikTok</a>
@@ -414,7 +412,7 @@
     <a href="https://www.linkedin.com/in/krishwaje" class="magnetic">LinkedIn</a>
     <a href="brands.html" class="magnetic">For brands</a>
   </div>
-    <div class="fine">© 2026 Krish Waje · hello@flourishwithkrish.com</div>
+  <div class="fine">© 2026 Krish Waje · hello@flourishwithkrish.com</div>
 </footer>
 
 <script>
