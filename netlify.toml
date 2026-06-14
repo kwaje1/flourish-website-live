@@ -7,3 +7,16 @@
 
 [build.processing.html]
   pretty_urls = true
+
+# Redirect flourishwithkrish.com to kaywaje (added 2026-06-15)
+[[redirects]]
+  from = "https://flourishwithkrish.com/*"
+  to = "https://kaywaje.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.flourishwithkrish.com/*"
+  to = "https://kaywaje.com/:splat"
+  status = 301
+  force = true
