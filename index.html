@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1A1714">
 <title>Krish Waje — Founder, Operator, Mentor</title>
 <style>
   :root{
@@ -130,9 +135,10 @@
   .story-grid p strong{color:var(--accent2);}
 
   .press{background:var(--paper);border-top:1.5px solid rgba(26,23,20,.12);border-bottom:1.5px solid rgba(26,23,20,.12);padding:46px 0;overflow:hidden;}
-  .press .label{text-align:center;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:28px;}
-  .press-track{display:flex;gap:60px;align-items:center;animation:scroll-x 32s linear infinite;width:max-content;}
-  .press-track img{height:30px;opacity:.6;filter:grayscale(1);}
+  .press .label{text-align:center;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:32px;}
+  .press-track{display:flex;gap:30px;align-items:center;animation:scroll-x 40s linear infinite;width:max-content;}
+  .press-track img{height:48px;width:auto;max-width:150px;object-fit:contain;background:#fff;border:1px solid rgba(26,23,20,.08);border-radius:12px;padding:12px 20px;box-shadow:0 2px 10px rgba(26,23,20,.06);transition:transform .3s,box-shadow .3s;}
+  .press-track img:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(26,23,20,.12);}
 
   .testi{background:var(--sage);color:#fff;}
   .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:50px;}
@@ -163,52 +169,20 @@
   footer .socials{display:flex;gap:22px;font-size:14px;}
   footer .socials a:hover{color:var(--gold);}
   footer .fine{font-size:13px;color:rgba(246,239,230,.5);}
-
-  /* ===== Resources / storefront ===== */
-  .resources{background:var(--cream);}
-  .res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:54px;}
-  .res-grid-2{grid-template-columns:repeat(2,minmax(280px,1fr));max-width:760px;margin-left:auto;margin-right:auto;}
-  @media(max-width:680px){.res-grid-2{grid-template-columns:1fr;}}
-  .res-card{background:var(--card);border-radius:22px;padding:36px 32px;border:1.5px solid var(--ink);display:flex;flex-direction:column;transition:transform .4s,box-shadow .4s;}
-  .res-card:hover{transform:translateY(-8px);box-shadow:14px 14px 0 var(--ink);}
-  .res-card .rtag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:600;padding:6px 14px;border-radius:40px;background:var(--gold);margin-bottom:18px;}
-  .res-card.free .rtag{background:var(--sage);color:#fff;}
-  .res-card .rname{font-size:23px;font-weight:800;letter-spacing:-.5px;margin-bottom:10px;}
-  .res-card .rdesc{color:var(--muted);line-height:1.6;font-size:15px;margin-bottom:22px;flex:1;}
-  .res-card .rprice{font-size:22px;font-weight:800;color:var(--accent2);margin-bottom:20px;}
-  .res-card .rprice .free-txt{color:var(--sage);}
-  .res-card .btn{align-self:flex-start;cursor:none;border:none;font-family:inherit;}
-  .res-note{text-align:center;color:var(--muted);font-size:14px;margin-top:34px;}
-
-  /* ===== Email-gate modal ===== */
-  .modal-overlay{position:fixed;inset:0;background:rgba(14,12,10,.78);backdrop-filter:blur(6px);z-index:5000;display:none;align-items:center;justify-content:center;padding:24px;}
-  .modal-overlay.show{display:flex;}
-  .modal{background:var(--cream);color:var(--ink);border-radius:24px;max-width:440px;width:100%;padding:44px 38px;text-align:center;position:relative;border:1.5px solid var(--ink);box-shadow:16px 16px 0 var(--accent);}
-  .modal h3{font-size:26px;font-weight:800;letter-spacing:-.5px;margin-bottom:10px;}
-  .modal p{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:26px;}
-  .modal .cap-form{flex-direction:column;max-width:100%;gap:12px;margin-top:0;}
-  .modal .cap-form input{width:100%;}
-  .modal .modal-close{position:absolute;top:16px;right:20px;font-size:26px;line-height:1;color:var(--muted);background:none;border:none;cursor:none;}
-  .modal .modal-close:hover{color:var(--accent2);}
 </style>
 </head>
 <body>
 <form name="waitlist" data-netlify="true" netlify-honeypot="bot-field" hidden><input type="hidden" name="form-name" value="waitlist"><input type="email" name="email"><input name="bot-field"></form>
 <form name="newsletter" data-netlify="true" netlify-honeypot="bot-field" hidden><input type="hidden" name="form-name" value="newsletter"><input type="email" name="email"><input name="bot-field"></form>
-<form name="workbook" data-netlify="true" netlify-honeypot="bot-field" hidden><input type="hidden" name="form-name" value="workbook"><input type="text" name="name"><input type="email" name="email"><input name="bot-field"></form>
-
-<!-- Gumroad overlay checkout (opens buy buttons in a modal, no redirect) -->
-<script src="https://gumroad.com/js/gumroad.js"></script>
 
 <div class="cursor-ring"></div>
 <div class="cursor-dot"></div>
 
 <nav id="nav">
-  <a href="index.html" class="logo" aria-label="KayWajé home"><svg viewBox="0 0 300 80" width="118" height="32" role="img" aria-label="KayWajé" style="display:block;overflow:visible"><defs><linearGradient id="kwGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E8B84B"/><stop offset="55%" stop-color="#E8623D"/><stop offset="100%" stop-color="#C2410C"/></linearGradient></defs><text x="0" y="60" font-family="'Helvetica Neue',Arial,sans-serif" font-size="64" font-weight="800" letter-spacing="-2" fill="url(#kwGrad)">KayWajé</text></svg></a>
+  <div class="logo">KRISH&nbsp;WAJE</div>
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="links" id="navlinks">
     <a href="#services">Work with me</a>
-    <a href="#resources">Resources</a>
     <a href="#story">My story</a>
     <a href="#results">Results</a>
     <a href="brands.html">For brands</a>
@@ -231,7 +205,6 @@
   <div class="hero-photo reveal">
     <img src="hero.jpg" alt="Krish Waje holding a Lunaire candle, the brand she founded" style="width:100%;max-height:70vh;aspect-ratio:9/11;object-fit:cover;object-position:center top;border-radius:20px;display:block;">
   </div>
-  <div class="scroll-hint"><div class="line"></div><span>SCROLL</span></div>
 </header>
 
 <div class="marquee-wrap">
@@ -297,7 +270,7 @@
       <h2 class="sec-h" style="margin-bottom:28px;">From stuck to <em>strategic clarity.</em></h2>
       <p>At 15, I had open heart surgery. It taught me life is short — if I was going to build something, it had to <strong>matter.</strong></p>
       <p>I did the "right" things: school, uni, the corporate climb. From the outside I'd made it. Inside, I felt like a small cog in a system I didn't believe in. Then I was made redundant — and finally committed to building something of my own.</p>
-      <p>So I went all in on <a href="https://www.lunaire.au" target="_blank" rel="noopener"><strong>Lunaire</strong></a>, my refillable candle brand. I learned to source, price, market and operate a real business — not in theory, in practice. Expensive mistakes included.</p>
+      <p>So I went all in on <strong>Lunaire</strong>, my refillable candle brand. I learned to source, price, market and operate a real business — not in theory, in practice. Expensive mistakes included.</p>
       <p>Today my business supports my life instead of consuming it. Now I help others get there too — no gatekeeping, just the clarity and frameworks I wish I'd had when I started.</p>
       <a href="#book" class="btn btn-dark magnetic" style="margin-top:10px">Let's build yours</a>
     </div>
@@ -320,52 +293,6 @@
     <div class="quote reveal magnetic"><p>"It was such an insightful conversation and I've learnt insanely. Will be investing more time into learning about ads."</p><div class="who">Austin</div><div class="biz">Techphil · Sydney, Australia</div></div>
   </div>
 </section>
-
-<section class="resources" id="resources">
-  <div class="reveal">
-    <div class="sec-label">Resources &amp; tools</div>
-    <h2 class="sec-h">Grab a tool, get <em>moving today.</em></h2>
-    <p class="sec-sub">Not ready for a call? Start here. The exact tools and frameworks I use to run a profitable business — instant download, yours to keep.</p>
-  </div>
-  <div class="res-grid res-grid-2">
-
-    <!-- FREE: Business Starter Checklist (email-gated) -->
-    <div class="res-card free reveal magnetic">
-      <span class="rtag">Free download</span>
-      <div class="rname">Business Starter Checklist</div>
-      <div class="rdesc">Everything you need to get your business off the ground — the exact checklist I wish I'd had on day one. Pop in your email and it's yours, free.</div>
-      <div class="rprice"><span class="free-txt">Free</span></div>
-      <button type="button" class="btn btn-dark magnetic" onclick="openGate()">Get it free →</button>
-    </div>
-
-    <!-- PAID: How To Get Featured In The Media (PDF) -->
-    <div class="res-card reveal magnetic">
-      <span class="rtag">Ebook · PDF</span>
-      <div class="rname">How To Get Featured In The Media</div>
-      <div class="rdesc">The exact playbook I used to land 25+ press features — no PR agency, no budget. Pitch templates, the LinkedIn outreach approach, paid &amp; free routes, and the real examples behind every one.</div>
-      <div class="rprice">$29 AUD</div>
-      <a class="btn btn-fill magnetic" href="https://flourishkrish.gumroad.com/l/jsqvqh" data-gumroad-single-product="true">Buy now →</a>
-    </div>
-
-  </div>
-  <p class="res-note">Free download delivered to your inbox · paid ebook via secure Gumroad checkout, instant download</p>
-</section>
-
-<!-- Email-gate modal for the free workbook -->
-<div class="modal-overlay" id="gate">
-  <div class="modal">
-    <button type="button" class="modal-close" onclick="closeGate()" aria-label="Close">&times;</button>
-    <h3>Where should I send it?</h3>
-    <p>Pop your details in and the Business Starter Checklist lands in your inbox straight away.</p>
-    <form class="cap-form" name="workbook" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="gateSubmit(event,this)">
-      <input type="hidden" name="form-name" value="workbook">
-      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
-      <input type="text" name="name" placeholder="First name" required>
-      <input type="email" name="email" placeholder="your@email.com" required>
-      <button type="submit" class="btn btn-fill magnetic" style="border:none">Send me the workbook</button>
-    </form>
-  </div>
-</div>
 
 <section class="waitlist" id="waitlist">
   <div class="reveal">
@@ -412,7 +339,7 @@
     <a href="https://www.linkedin.com/in/krishwaje" class="magnetic">LinkedIn</a>
     <a href="brands.html" class="magnetic">For brands</a>
   </div>
-  <div class="fine">© 2026 Krish Waje · kaywaje@gmail.com</div>
+  <div class="fine">© 2026 Krish Waje · hello@flourishwithkrish.com</div>
 </footer>
 
 <script>
@@ -475,29 +402,6 @@ function thanks(e,form){
   fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params.toString()})
     .then(r=>{form.innerHTML='<div style="font-size:20px;font-weight:700">You’re in. Watch your inbox.</div>';})
     .catch(()=>{form.innerHTML='<div style="font-size:20px;font-weight:700">You’re in. Watch your inbox.</div>';});
-}
-
-/* ===== Free workbook email-gate ===== */
-// Free Business Starter Checklist — served from deploy/downloads/
-const WORKBOOK_URL='/downloads/business-starter-checklist.pdf';
-const gate=document.getElementById('gate');
-function openGate(){gate.classList.add('show');document.body.style.overflow='hidden';}
-function closeGate(){gate.classList.remove('show');document.body.style.overflow='';}
-gate.addEventListener('click',e=>{if(e.target===gate)closeGate();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGate();});
-function gateSubmit(e,form){
-  e.preventDefault();
-  const params=new URLSearchParams();
-  params.append('form-name',form.getAttribute('name'));
-  new FormData(form).forEach((v,k)=>{if(k!=='form-name')params.append(k,v);});
-  const done=()=>{
-    const modal=form.closest('.modal');
-    modal.innerHTML='<h3>Done! 🎉</h3><p>Your download is starting now. I’ve also emailed you a copy.</p>'+
-      '<a class="btn btn-fill magnetic" style="border:none" href="'+WORKBOOK_URL+'" download>Download again</a>';
-    const a=document.createElement('a');a.href=WORKBOOK_URL;a.download='';document.body.appendChild(a);a.click();a.remove();
-  };
-  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params.toString()})
-    .then(done).catch(done);
 }
 </script>
 </body>
